@@ -51,6 +51,7 @@ main .perfume-img {
   margin: 0.5rem 0;
   font-family: "Fraunces", serif;
   color: hsl(212, 21%, 14%);
+  line-height: 1;
 }
 
 .main-content p {
@@ -73,6 +74,7 @@ main .perfume-img {
   margin-left: 1rem;
   color: hsl(228, 12%, 48%);
   text-decoration: line-through;
+  font-size: 0.875rem;
 }
 
 .main-content button {
@@ -91,4 +93,30 @@ main .perfume-img {
 
 .main-content button span {
   margin-right: 0.5rem;
+}
+
+@media screen and (min-width: 760px) {
+  body {
+    align-items: center;
+  }
+
+  main {
+    flex-direction: row;
+    width: 550px;
+    height: 400px;
+  }
+
+  main .perfume-img {
+    height: 100%;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+    max-width: 50%;
+  }
+
+  main .main-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
