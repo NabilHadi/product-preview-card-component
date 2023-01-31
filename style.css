@@ -1,39 +1,84 @@
-/* font-family: 'Fraunces', serif;
-font-family: 'Montserrat', sans-serif; */
-
-* {
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
 body {
   background-color: hsl(30, 38%, 92%);
-  min-height: 100vh;
   font-family: "Montserrat", sans-serif;
   display: flex;
   justify-content: center;
-}
-
-img {
-  max-width: 100%;
+  align-items: center;
+  padding: 1rem;
 }
 
 main {
   background-color: white;
   border-radius: 10px;
-  display: flex;
-  width: 320px;
-  height: fit-content;
-  flex-direction: column;
-  margin-top: 1rem;
+  display: grid;
+  overflow-y: hidden;
 }
 
-main .perfume-img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  object-position: 20% 35%;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+picture img {
+  height: 100%;
 }
 
 .main-content {
@@ -43,13 +88,14 @@ main .perfume-img {
 .main-content .small-title {
   color: hsl(228, 12%, 48%);
   text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 0.7rem;
+  letter-spacing: 4px;
+  font-size: 0.875rem;
 }
 
 .main-content h1 {
   margin: 0.5rem 0;
   font-family: "Fraunces", serif;
+  font-weight: 700;
   color: hsl(212, 21%, 14%);
   line-height: 1;
 }
@@ -82,10 +128,8 @@ main .perfume-img {
   border: none;
   color: white;
   width: 100%;
-  margin-top: 1rem;
   padding: 0.8rem;
   border-radius: 10px;
-  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,28 +144,16 @@ main .perfume-img {
   margin-right: 0.5rem;
 }
 
-@media screen and (min-width: 760px) {
-  body {
-    align-items: center;
-  }
-
+@media screen and (min-width: 600px) {
   main {
-    flex-direction: row;
-    width: 550px;
-    height: 400px;
-  }
-
-  main .perfume-img {
-    height: 100%;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 10px;
-    max-width: 50%;
+    grid-template-columns: 1fr 1fr;
+    max-width: 550px;
   }
 
   main .main-content {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
   }
 }
